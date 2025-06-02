@@ -18,14 +18,31 @@ def get_numbers_ticket(min, max, quantity):
     """
 
     # Перевірка валідності введених даних
-    if min < 1 or max > 1000:
-        print("Межі діапазону мають бути в межах від 1 до 1000.")
-        return []
-    
-    if quantity < min or quantity > max:
-        print(f"Кількість чисел має бути в діапазоні від {min} до {max}.")
-        return []
-    
+    try:
+        if not 1 <= min <= 1000:
+            print("Межі діапазону мають бути в межах від 1 до 1000.")
+            return []
+        
+        if not 1 <= max <= 1000:
+            print("Межі діапазону мають бути в межах від 1 до 1000.")
+            return []
+        
+        if min > max:
+            print("Межа початку має бути менша за межу закінчення")
+            return []
+
+        if quantity > (max + 1) - min:
+            print("Загальна кількість чисел не може бути меншою за діапазон")
+            return []
+
+        if not 1 <= quantity <= 1000:
+            print("Межі діапазону мають бути в межах від 1 до 1000.")
+            return []
+        
+    except ValueError:
+        print("Неправильні введені дані")
+
+
     # Створюємо робочий список чисел
     work_space = list(range(min, max +1))
 
@@ -35,5 +52,5 @@ def get_numbers_ticket(min, max, quantity):
     return sorted(new_list)
 
 # Викликаємо функцію
-numbers = get_numbers_ticket(1, 49, 8)
+numbers = get_numbers_ticket(10, 19, 10)
 print("Ваші лотерейні номери:", numbers)
