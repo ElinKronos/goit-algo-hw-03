@@ -52,5 +52,5 @@ def get_numbers_ticket(min, max, quantity):
     return sorted(new_list)
 
 # Викликаємо функцію
-numbers = get_numbers_ticket(10, 19, 10)
+numbers = get_numbers_ticket(50, 250, 5)
 print("Ваші лотерейні номери:", numbers)
