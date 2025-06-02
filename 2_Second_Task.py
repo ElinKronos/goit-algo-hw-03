@@ -2,7 +2,7 @@
 
 import random
 
-def get_number_tickets(min, max, quantity):
+def get_numbers_ticket(min, max, quantity):
 
     """
     Генерує відсортований список унікальних випадкових чисел.
@@ -35,5 +35,5 @@ def get_number_tickets(min, max, quantity):
     return sorted(new_list)
 
 # Викликаємо функцію
-numbers = get_number_tickets(1, 49, 8)
+numbers = get_numbers_ticket(1, 49, 8)
 print("Ваші лотерейні номери:", numbers)
